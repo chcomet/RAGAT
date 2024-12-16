@@ -49,7 +49,7 @@ def get_logger(name, log_dir, config_dir):
 
     """
     config_dict = json.load(open(config_dir + 'log_config.json'))
-    config_dict['handlers']['file_handler']['filename'] = log_dir + name.replace('/', '-')
+    config_dict['handlers']['file_handler']['filename'] = log_dir + name + '.log'
     logging.config.dictConfig(config_dict)
     logger = logging.getLogger(name)
 
